@@ -1,5 +1,6 @@
 package com.ourincheon.wazap;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -35,6 +36,7 @@ import retrofit2.Retrofit;
 
 public class MasterJoinActivity extends AppCompatActivity {
 
+    public static Context mContext;
     reqContest contest;
     ContestData contestData;
     TextView jTitle,jCTitle,jButton,jmList,jCate,jApply,jRec,jName,jCover,jMem,jDate,jHost,jLoc,jPos;
@@ -47,6 +49,8 @@ public class MasterJoinActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_master_join);
+
+        mContext = this;
 
         contestData = new ContestData();
 
@@ -138,6 +142,12 @@ public class MasterJoinActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadPage(num);
     }
 
     void editCont()

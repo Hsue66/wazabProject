@@ -78,25 +78,6 @@ public class showMypageActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-    /*    sName = (TextView) findViewById(R.id.sName);
-        sMajor = (TextView)  findViewById(R.id.sMajor);
-        sUniv = (TextView)  findViewById(R.id.sUniv);
-        sLoc = (TextView)  findViewById(R.id.sLoc);
-        sKakao = (TextView)  findViewById(R.id.sKakao);
-        sIntro = (TextView) findViewById(R.id.sIntro);
-        sExp = (TextView) findViewById(R.id.sExp);
-        sSkill = (TextView) findViewById(R.id.sSkill);
-
-        if(flag==0) {
-            SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
-            profileImg = (ImageView) findViewById(R.id.sPro);
-            thumbnail = pref.getString("profile_img", "");
-            System.out.println(pref.getString("access_token", ""));
-            ThumbnailImage thumb = new ThumbnailImage(thumbnail, profileImg);
-            thumb.execute();
-        }
-*/
         loadPage();
     }
 

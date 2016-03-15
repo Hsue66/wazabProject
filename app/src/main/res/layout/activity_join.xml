@@ -30,19 +30,16 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
+
         <Button
-            android:text="♡"
-            android:layout_width="20.67dp"
-            android:layout_height="19.33dp"
             android:id="@+id/jPick"
+            android:layout_width="26.67dp"
+            android:layout_height="24.67dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:background="#ffffff"
-            android:layout_marginTop="13dp"
-            android:textSize="20dp"
-            android:textColor="#0067ff"
-            android:layout_marginRight="15.33dp" />
+            android:layout_marginRight="11.67dp"
+            android:background="@drawable/heart1"/>
 
     </LinearLayout>
 

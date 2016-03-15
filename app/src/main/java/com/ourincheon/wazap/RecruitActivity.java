@@ -182,6 +182,7 @@ public class RecruitActivity extends AppCompatActivity {
                     if (result) {
                         Log.d("수정 결과: ", msg);
                         Toast.makeText(getApplicationContext(), "수정되었습니다.", Toast.LENGTH_SHORT).show();
+                        ((MasterJoinActivity)(MasterJoinActivity.mContext)).onResume();
 
                     } else {
                         Log.d("수정 실패: ", msg);
