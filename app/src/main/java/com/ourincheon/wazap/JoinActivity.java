@@ -34,7 +34,7 @@ import retrofit2.Retrofit;
 public class JoinActivity extends AppCompatActivity {
 
     reqContest contest;
-    TextView jTitle,jButton,jCate,jApply,jRec,jName,jCover,jMem,jDate,jHost,jLoc,jPos,jPro;
+    TextView jTitle,jCTitle,jButton,jCate,jApply,jRec,jName,jCover,jMem,jDate,jHost,jLoc,jPos,jPro;
     String access_token,num,Writer;
     Button jPick,jBefore;
 
@@ -44,6 +44,7 @@ public class JoinActivity extends AppCompatActivity {
         setContentView(R.layout.activity_join);
 
         jTitle = (TextView) findViewById(R.id.jTitle);
+        jCTitle = (TextView) findViewById(R.id.jCTitle);
         jCate =  (TextView) findViewById(R.id.jCate);
         jApply = (TextView) findViewById(R.id.jApply);
         jRec = (TextView) findViewById(R.id.jRec);
@@ -221,6 +222,7 @@ public class JoinActivity extends AppCompatActivity {
 
                     System.out.println(contest.getData().getTitle());
                     jTitle.setText(contest.getData().getTitle());
+                    jCTitle.setText(contest.getData().getCont_title());
                     jCate.setText(contest.getData().getCategories());
                     jApply.setText(String.valueOf(contest.getData().getAppliers()));
                     jMem.setText(String.valueOf(contest.getData().getMembers()));

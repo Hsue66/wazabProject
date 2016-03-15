@@ -19,6 +19,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.GsonConverterFactory;
@@ -56,14 +59,16 @@ public class showMypageActivity extends AppCompatActivity {
         sIntro = (TextView) findViewById(R.id.sIntro);
         sExp = (TextView) findViewById(R.id.sExp);
         sSkill = (TextView) findViewById(R.id.sSkill);
+        profileImg = (ImageView) findViewById(R.id.sPro);
 
         if(flag==0) {
-            SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+    /*        SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
             profileImg = (ImageView) findViewById(R.id.sPro);
             thumbnail = pref.getString("profile_img", "");
             System.out.println(pref.getString("access_token", ""));
             ThumbnailImage thumb = new ThumbnailImage(thumbnail, profileImg);
             thumb.execute();
+            */
         }
 
         loadPage();
@@ -136,6 +141,16 @@ public class showMypageActivity extends AppCompatActivity {
                         sIntro.setText(jsonArr.getJSONObject(0).getString("introduce"));
                         sExp.setText(jsonArr.getJSONObject(0).getString("exp"));
                         sSkill.setText(jsonArr.getJSONObject(0).getString("skill"));
+
+                        try {
+                            thumbnail = URLDecoder.decode(jsonArr.getJSONObject(0).getString("profile_img"), "EUC_KR");
+                            ThumbnailImage thumb = new ThumbnailImage(thumbnail, profileImg);
+                            thumb.execute();
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.println(thumbnail);
+
                     } catch (JSONException e) {
                     }
 

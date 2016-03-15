@@ -11,6 +11,7 @@ public class ContestData  implements Serializable {
     int contests_id;
     int recruitment;
     String title;
+    String cont_title;
     String cont_writer;
     String hosts;
     String username;
@@ -30,6 +31,14 @@ public class ContestData  implements Serializable {
     public ContestData(){}
     public int getIs_finish() {
         return is_finish;
+    }
+
+    public String getCont_title() {
+        return cont_title;
+    }
+
+    public void setCont_title(String cont_title) {
+        this.cont_title = cont_title;
     }
 
     public String getCont_locate() {

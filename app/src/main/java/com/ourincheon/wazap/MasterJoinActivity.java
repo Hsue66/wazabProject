@@ -37,7 +37,7 @@ public class MasterJoinActivity extends AppCompatActivity {
 
     reqContest contest;
     ContestData contestData;
-    TextView jTitle,jButton,jmList,jCate,jApply,jRec,jName,jCover,jMem,jDate,jHost,jLoc,jPos;
+    TextView jTitle,jCTitle,jButton,jmList,jCate,jApply,jRec,jName,jCover,jMem,jDate,jHost,jLoc,jPos;
     Button eBtn,jBefore;
     String access_token,num;
     AlertDialog.Builder ad,deleteD;
@@ -51,6 +51,7 @@ public class MasterJoinActivity extends AppCompatActivity {
         contestData = new ContestData();
 
         jTitle = (TextView) findViewById(R.id.jmTitle);
+        jCTitle = (TextView) findViewById(R.id.jmCTitle);
         jCate =  (TextView) findViewById(R.id.jmCate);
         jApply = (TextView) findViewById(R.id.jmApply);
         jRec = (TextView) findViewById(R.id.jmRec);
@@ -264,6 +265,7 @@ public class MasterJoinActivity extends AppCompatActivity {
 
                     System.out.println(contest.getData().getTitle());
                     jTitle.setText(contest.getData().getTitle());
+                    jCTitle.setText(contest.getData().getCont_title());
                     jCate.setText(contest.getData().getCategories());
                     jApply.setText(String.valueOf(contest.getData().getAppliers()));
                     jMem.setText(String.valueOf(contest.getData().getMembers()));
@@ -279,6 +281,7 @@ public class MasterJoinActivity extends AppCompatActivity {
                     jDate.setText("D - "+day.dday(parts[0]));
 
                     contestData.setTitle(contest.getData().getTitle());
+                    contestData.setCont_title(contest.getData().getCont_title());
                     contestData.setCategories(contest.getData().getCategories());
                     contestData.setAppliers(contest.getData().getAppliers());
                     contestData.setMembers(contest.getData().getMembers());
