@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.ourincheon.wazap.Retrofit.regUser;
 
@@ -125,8 +126,9 @@ public class showMypageActivity extends AppCompatActivity {
 
                         try {
                             thumbnail = URLDecoder.decode(jsonArr.getJSONObject(0).getString("profile_img"), "EUC_KR");
-                            ThumbnailImage thumb = new ThumbnailImage(thumbnail, profileImg);
-                            thumb.execute();
+                            Glide.with(showContext).load(thumbnail).into(profileImg);
+                         //   ThumbnailImage thumb = new ThumbnailImage(thumbnail, profileImg);
+                         //   thumb.execute();
                         } catch (UnsupportedEncodingException e) {
                             e.printStackTrace();
                         }
