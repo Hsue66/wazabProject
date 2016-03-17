@@ -290,6 +290,8 @@ public class MasterJoinActivity extends AppCompatActivity {
                     Dday day = new Dday();
                     jDate.setText("D - "+day.dday(parts[0]));
 
+                    contestData = contest.getData();
+                    /*
                     contestData.setTitle(contest.getData().getTitle());
                     contestData.setCont_title(contest.getData().getCont_title());
                     contestData.setCategories(contest.getData().getCategories());
@@ -303,6 +305,7 @@ public class MasterJoinActivity extends AppCompatActivity {
                     contestData.setPeriod(parts[0]);
                     contestData.setCont_locate(contest.getData().getCont_locate());
                     contestData.setPositions(contest.getData().getPositions());
+                    */
 
                 } else if (response.isSuccess()) {
                     Log.d("Response Body isNull", response.message());

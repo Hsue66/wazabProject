@@ -235,8 +235,6 @@ public class FragmentPage extends Fragment {
                             Dday day = new Dday();
 
                             String title =  jsonArr.getJSONObject(i).getString("title");
-                            if(title.length() > 15)
-                                title = title.substring(0,15)+"...";
                             item[i] = new Recycler_item( title,//jsonArr.getJSONObject(i).getString("title"),
                                     jsonArr.getJSONObject(i).getString("hosts"), jsonArr.getJSONObject(i).getString("username"),
                                     Integer.parseInt(jsonArr.getJSONObject(i).getString("recruitment")),

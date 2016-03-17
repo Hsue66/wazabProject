@@ -319,7 +319,7 @@ public class ClipList extends AppCompatActivity {
             addInfo.setTitle(title);
             String[] parts = period.split("T");
             addInfo.setPeriod(parts[0]);
-            addInfo.setCategories(categories);
+     //       addInfo.setCategories(categories);
             addInfo.setContests_id(id);
             addInfo.setRecruitment(member);
 
@@ -372,7 +372,7 @@ public class ClipList extends AppCompatActivity {
 
             holder.cTitle.setText(mData.getTitle());
 
-            holder.Cate.setText(mData.getCategories());
+  //          holder.Cate.setText(mData.getCategories());
 
             holder.Member.setText("모집인원 " + mData.getRecruitment() + "명");
 
